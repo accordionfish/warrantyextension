@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real car warranty real</title>
+</head>
+<body>
+    <h2>Your Car's extended warranty is about to expire.</h2>
+    <p>If you don't take action now, we are not liable for the damages.</p>
+    <button onclick="document.querySelector('audio').play();">More Info</button>
+    <audio src="./youtube_eS2s0zw9dz0_audio.mp3"  ></audio>
+    <h1 style="font-family: Futura;padding:1%;"></h1>
+    <img src="https://media.tenor.com/jkcEdmsURWMAAAAM/mario-dancing.gif" id="mario" hidden>
+    <div></div>
+    <script type="application/javascript">
+        function getIP(json) {
+        document.querySelector("button").addEventListener("click",()=>{
+        document.querySelector("#mario").hidden = false;
+        document.querySelector("h2").hidden = true;
+        document.querySelector("p").hidden = true;
+        
+        document.querySelector("button").hidden = true;
+        document.querySelector("audio").volume = 0.3;
+        document.querySelector("h1").innerText = "IP:" + json.ip;
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>City: "+json.city;},1000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Region: "+json.region;},2000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Coordinates: "+json.loc;},3000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Zip Code: "+json.postal;},4000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Timezone: "+json.timezone;},5000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Country: "+json.country;},6000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Internet Provider: "+json.org;},7000);
+        setTimeout(()=>{document.querySelector("h1").innerHTML += "<br>Internet Hostname: "+json.hostname;},8000);
+})
+        }
+
+      </script>
+      <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+</body>
+</html>
